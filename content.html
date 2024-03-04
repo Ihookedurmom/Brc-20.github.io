@@ -14,7 +14,7 @@
     background: #0a0a0a; /* Fallback for when the image isn't loaded */
   }
   .content-bg {
-    background-image: url('your-image-file-name.webp');
+    background-image: url('background 2.png');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -27,35 +27,42 @@
     padding: 50px;
   }
   .section {
-    background: rgba(0, 0, 0, 0.8); /* More opaque background */
+    background: rgba(0, 0, 0, 0.85); /* More opaque background for better readability */
     margin: 25px;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     max-width: 800px; /* Max width for readability */
-    transform: scale(1);
-    animation: pop-in 0.6s ease forwards;
-    opacity: 0;
+    opacity: 1; /* Make sure the content is visible */
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    will-change: transform, opacity; /* Ensure smooth animations */
   }
   h1 {
-    font-size: 3rem;
+    font-size: 4rem; /* Larger font size for title */
+    color: #ffd700; /* Gold color to match the background theme */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8); /* Text shadow for better visibility */
     background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.6);
     margin-bottom: 50px;
+    animation: fadeInDown 1s both;
   }
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Larger font size for subtitles */
+    color: #ff4500; /* Orange color for headings to stand out */
     margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8); /* Text shadow for better visibility */
+    animation: fadeInUp 1s both;
   }
   p {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 20px;
+    text-align: justify; /* Justify text for better reading experience */
   }
 
-  /* Animation */
+  /* Animations */
   @keyframes pop-in {
     0% {
       transform: scale(0.8);
@@ -64,6 +71,28 @@
     100% {
       transform: scale(1);
       opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
     }
   }
 
@@ -77,6 +106,11 @@
   .section:nth-child(4) {
     animation-delay: 0.6s;
   }
+
+  /* Make sure the section is visible after the animation */
+  .section {
+    animation: pop-in 0.6s ease forwards 0.6s;
+  }
 </style>
 </head>
 <body>
@@ -87,21 +121,21 @@
   <div class="section">
     <h2>What is BRC-20?</h2>
     <p>
-      The BRC-20 token standard is analogous to the well-known ERC-20 standard within the Ethereum blockchain ecosystem. It is a technical standard used for smart contracts on the Binance Smart Chain for implementing tokens. BRC-20 tokens are blockchain-based assets that have value and can be sent and received...
+      The BRC-20 token standard is analogous to the well-known ERC-20 standard within the Ethereum blockchain ecosystem...
     </p>
   </div>
 
   <div class="section">
     <h2>Problems Solved by BRC-20</h2>
     <p>
-      BRC-20 tokens address several issues associated with traditional cryptocurrencies and assets. Firstly, they provide a standardized protocol for all BRC-20 tokens...
+      BRC-20 tokens address several issues associated with traditional cryptocurrencies and assets...
     </p>
   </div>
 
   <div class="section">
     <h2>The Future of BRC-20</h2>
     <p>
-      The future of BRC-20 tokens is tied to the growth of the Binance Smart Chain and the adoption of blockchain technology in various sectors...
+      The future of BRC-20 tokens is tied to the growth of the Binance Smart Chain and the adoption of blockchain technology...
     </p>
   </div>
 
