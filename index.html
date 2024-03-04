@@ -8,6 +8,7 @@
   body, html {
     height: 100%;
     margin: 0;
+    font-family: Arial, sans-serif;
   }
   .bg-video {
     position: fixed;
@@ -16,12 +17,19 @@
     min-width: 100%; 
     min-height: 100%;
   }
-  .content {
+  .overlay {
     position: relative;
     z-index: 1;
     text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
+    color: white;
+  }
+  .logo {
+    width: 250px; /* You can adjust this as needed */
+    margin-top: 50px; /* Spacing from the top */
+  }
+  .title {
+    font-size: 32px;
+    margin: 20px 0;
   }
   .btn {
     background-color: #4CAF50; /* Green */
@@ -49,7 +57,9 @@
   Your browser does not support HTML5 video.
 </video>
 
-<div class="content">
+<div class="overlay">
+  <img src="logo.png" alt="W3 Games Logo" class="logo">
+  <h1 class="title">Everything you should know about BRC-20</h1>
   <a href="content.html" class="btn">Explore BRC-20 History</a>
 </div>
 
